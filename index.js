@@ -8,6 +8,8 @@ const app = express()
 const port = process.env.PORT ||3001
 app.use(express.json());
 app.use(cors())
+app.get('/',(req,res)=>{
+   res.status(200).send("Apis are live..")
+})
 app.use('/api',router)
-
 app.listen(port, () => console.log(`Port is listening on ${port}!`))
